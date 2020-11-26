@@ -1,0 +1,31 @@
+version: '3'
+
+# To run: docker-compose up -d
+
+services:
+  local-postgres-compose:
+    image: postgres:12.4
+    environment:
+      POSTGRES_PASSWORD: "YOUR-DB-PASSWORD-HERE"
+    ports:
+      - "5432:5432"
+    volumes:
+      - /home/postgres-data:/var/lib/postgresql/data 
+    networks:
+      - postgres-compose-network
+      
+  local-pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "YOUR-EMAIL-HERE"
+      PGADMIN_DEFAULT_PASSWORD: "YOUR-PGADMIN-PASSWORD-HERE"
+    ports:
+      - "5430:80"
+    depends_on:
+      - local-postgres-compose
+    networks:
+      - postgres-compose-network
+
+networks: 
+  postgres-compose-network:
+    driver: bridge
