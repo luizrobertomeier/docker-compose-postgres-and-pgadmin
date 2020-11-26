@@ -7,7 +7,7 @@ A docker-compose file to fast install and run PostGres and Pgadmin locally.
 
 2) Install docker-compose
 
-3) Download the file docker-compoe.yml and run the command: docker-compose up -d
+3) Close or Download the repo and run the command: docker-compose up -d
 
 If your system does not have Postgres and PgAdmin images, they will be downloaded automatically.
 
