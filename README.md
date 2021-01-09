@@ -12,6 +12,7 @@ A docker-compose file to fast install and run PostGres and Pgadmin locally.
 4) After the docker downloads the images and installs the containers, you can test pgadmin in the browser:
 
 4.1) localhost: 5430 (or another port you have chosen)
+
 4.2) username and password you set in docker-compose.yml
 
 5) Pgadmin:
